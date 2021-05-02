@@ -1,0 +1,34 @@
+.header-bg {
+  background: var(--black2);
+}
+
+.header {
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+  min-height: 56px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-options > li {
+  margin-right: 16px;
+}
+
+.header-options > li > a {
+  color: var(--smkwhite);
+  font-family: var(--nunito);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  cursor: pointer;
+}
+
+.header-icon {
+  cursor: pointer;
+}
+
+.header-icon, .search {
+  margin-right: 16px;
+}
