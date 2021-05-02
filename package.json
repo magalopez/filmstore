@@ -1,0 +1,40 @@
+{
+  "name": "moviestore-ecomsur",
+  "version": "1.0.0",
+  "description": "Tech Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "browserify": {
+    "transform": [
+      [
+        "babelify",
+        {
+          "presets": [
+            "es2015"
+          ]
+        }
+      ]
+    ]
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/magalopez/moviestore-ecomsur.git"
+  },
+  "keywords": [
+    "javascript"
+  ],
+  "author": "magalopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/magalopez/moviestore-ecomsur/issues"
+  },
+  "homepage": "https://github.com/magalopez/moviestore-ecomsur#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0"
+  }
+}
