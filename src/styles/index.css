@@ -3,16 +3,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
 
-/* Commons */
+/* commons */
 @import "./commons/reset.css";
 @import "./commons/variables.css";
 @import "./commons/grid.css";
 
-/* Components */
-@import "./components/button.css";
-@import "./components/card.css";
-@import "./components/layout/header.css";
-@import "./components/cart.css";
+/* components content*/
+@import "./components/content/button.css";
+@import "./components/content/card-film.css";
+@import "./components/content/cart.css";
+@import "./components/content/card-cart.css";
 
-/* Views */
+/* components layout*/
+@import "./components/layout/header.css";
+
+/* views */
 @import "./views/films.css";

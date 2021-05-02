@@ -1,5 +1,5 @@
 import { httpRequest } from '../models/http.js';
-import { card } from './components/content/card/card.js';
+import { CardFilm } from './components/content/card-film/CardFilm.js';
 
 export const Films = (customClass) => {
   const containerFilms = document.createElement("main");
@@ -14,7 +14,7 @@ export const Films = (customClass) => {
       if(success) {
         let cards = "";
         data.forEach(element => {
-          cards += `${card(element.Poster, element.Title, element.Year, element.imdbID)}`;
+          cards += `${CardFilm(element.Poster, element.Title, element.Year, element.imdbID)}`;
         })
         containerFilms.innerHTML = cards;
       }

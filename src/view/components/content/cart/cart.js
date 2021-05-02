@@ -1,4 +1,5 @@
 import { button } from '../button/button.js';
+import { CardCart } from '../card-cart/CardCart.js';
 
 export const Cart = (customClass) => {
   const cart = document.createElement("section");
@@ -7,6 +8,21 @@ export const Cart = (customClass) => {
 
   let counter = 4;
   let total = 45.99;
+  const arraycard = [
+    {image: "N/A", title: "ass", year: 2020}, 
+    {image: "N/A", title: "ass", year: 2020}, 
+    {image: "N/A", title: "ass", year: 2020}, 
+    {image: "N/A", title: "ass", year: 2020}];
+
+  const renderCardsCart = (array) => {
+    let structureHTML = "";
+
+    array.forEach(element => {
+      structureHTML += `${CardCart(element.image, element.title, element.year)}`
+    })
+
+    return structureHTML;
+  };
   
   const structureHTML = ` <aside class="cart">
                               <section class="cart-header row">
@@ -19,6 +35,7 @@ export const Cart = (customClass) => {
                                 <span class="cart-counter">${counter}</span>
                               </section>
                               <section class="cart-body">
+                              ${renderCardsCart(arraycard)}
                               </section>
                               <section class="cart-footer">
                                 <form>
