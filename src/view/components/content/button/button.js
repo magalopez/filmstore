@@ -1,0 +1,1 @@
+export const button = (text, customClass = "") => `<button class="btn ${customClass}">${text}</button>`;
