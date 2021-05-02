@@ -1,0 +1,43 @@
+/* vars */
+
+:root {
+  /* colors */
+  --cyan : #6E43FF ; 
+  --red : #F91A2C;
+  --yellow : #F1B418;
+  --graylight : #AEAEB0 ;
+  --smkwhite: #EBEAEF;
+  --white: #ffffff ;
+
+  /* fonts */
+  --lato :  Lato, Arial, Helvetica, sans-serif;
+  --nunito : Nunito, Arial, Helvetica, sans-serif;
+ 
+  /* backgrounds */
+  --black1 : #000000;
+  --black2 : #10101A;
+  --gray : #272935;
+  --overlay : rgba(94, 94, 94, 0.5751);
+}
+
+/* custom class */
+
+.overflow-ellipsis {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--overlay); 
+  z-index: 1040;
+  box-sizing: border-box;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
