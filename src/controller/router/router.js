@@ -2,7 +2,7 @@ import { films } from '../../view/films.js';
 import { filmsPurchased } from '../../view/purchased.js';
 import { header } from '../../view/components/layout/header/header.js';
 import { cart } from '../../view/components/content/cart/cart.js';
-import { modalDetail } from '../../view/components/content/modal-detail/modalDetail.js';
+import { modalDetail } from '../../view/components/content/modaldetail/modalDetail.js';
 
 export const initRouter = () => {
   window.addEventListener('load', changeTmp(window.location.hash));
@@ -46,12 +46,6 @@ const viewTmp = routers => {
       root.appendChild(modalDetail());
       root.appendChild(films("series","row"));
       break;
-    // case 'favorites':
-    //   root.appendChild(Header(options, router));
-    //   root.appendChild(Cart());
-    //   root.appendChild(ModalDetail());
-    //   // root.appendChild(());
-    //   break;
     case 'purchased':
       root.appendChild(header(options, router));
       root.appendChild(cart());

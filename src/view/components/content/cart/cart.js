@@ -1,5 +1,5 @@
 import { button } from '../button/button.js';
-import { CardCart } from '../card-cart/cardCart.js';
+import { cardCart } from '../cardcart/cardCart.js';
 import helpers from '../../../../controller/helpers/helpers.js';
 
 export const cart = (customClass) => {
@@ -27,7 +27,7 @@ export const cart = (customClass) => {
     let structureHTML = "";
     array.forEach(element => {
       const { imdbID, Poster, Title, imdbRating, Director, price } = element;
-      structureHTML += `${CardCart( imdbID, Poster, Title, imdbRating, Director, price)}`
+      structureHTML += `${cardCart( imdbID, Poster, Title, imdbRating, Director, price)}`
     });
     return structureHTML;
   };

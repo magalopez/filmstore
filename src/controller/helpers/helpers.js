@@ -18,7 +18,7 @@ const GET_URL = (typeSearch, keyword, year, typeFilm, page, ) => {
       typeSearch = "s"
       break;
   }
-  const URL = `http://www.omdbapi.com/?${typeSearch}=${keyword}${year?"&y="+year:""}${typeFilm?"&type="+typeFilm:""}${page?"&page="+page:""}&apikey=41d927ce`;
+  const URL = `https://www.omdbapi.com/?${typeSearch}=${keyword}${year?"&y="+year:""}${typeFilm?"&type="+typeFilm:""}${page?"&page="+page:""}&apikey=41d927ce`;
   return URL;
 };
 

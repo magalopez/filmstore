@@ -1,5 +1,5 @@
 import { GET_FILM } from '../models/getFilm.js';
-import { cardFilm } from './components/content/card-film/cardFilm.js';
+import { cardFilm } from './components/content/cardfilm/cardFilm.js';
 import helpers from '../controller/helpers/helpers.js';
 
 export const films = (type, customClass) => {

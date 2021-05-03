@@ -1,4 +1,4 @@
-export const CardCart = ( ID, poster, title, rating, director, price ) => {
+export const cardCart = ( ID, poster, title, rating, director, price ) => {
   
   return (
     `<section class="card-cart row">

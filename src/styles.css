@@ -1,0 +1,22 @@
+
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap');
+
+/* commons */
+@import "./styles/commons/reset.css";
+@import "./styles/commons/variables.css";
+@import "./styles/commons/grid.css";
+
+/* components content*/
+@import "./styles/components/content/button.css";
+@import "./styles/components/content/card-film.css";
+@import "./styles/components/content/cart.css";
+@import "./styles/components/content/card-cart.css";
+@import "./styles/components/content/modal-detail.css";
+
+/* components layout*/
+@import "./styles/components/layout/header.css";
+
+/* views */
+@import "./styles/views/films.css";
