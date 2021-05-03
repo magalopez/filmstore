@@ -1,4 +1,4 @@
-# MovieStore
+# FilmStore
   Podrás encontrar tus peliculas favoritas, añadirlas a tu carrito de compras y posteriormente disfrutarlas!
 
  __Mini E-commerce desarrollado con HTML, CSS y Javascript.__
