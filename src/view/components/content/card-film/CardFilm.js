@@ -1,4 +1,4 @@
-import { button } from '../button/button.js';
+import { button } from '../button/Button.js';
 
 export const CardFilm = (purchased = false, poster, title, year = null, price, imdbID, btnText = "Add to card", btnEvent) => {
   const filmPrice = price != 0 ? "$"+price : "FREE";

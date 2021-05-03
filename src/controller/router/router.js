@@ -1,7 +1,7 @@
 import { Films } from '../../view/films.js';
 import { FilmsPurchased } from '../../view/purchased.js';
-import { Header } from '../../view/components/layout/header/header.js';
-import { Cart } from '../../view/components/content/cart/cart.js';
+import { Header } from '../../view/components/layout/header/Header.js';
+import { Cart } from '../../view/components/content/cart/Cart.js';
 
 export const initRouter = () => {
   window.addEventListener('load', changeTmp(window.location.hash));

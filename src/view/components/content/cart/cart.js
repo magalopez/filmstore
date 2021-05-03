@@ -1,4 +1,4 @@
-import { button } from '../button/button.js';
+import { button } from '../button/Button.js';
 import { CardCart } from '../card-cart/CardCart.js';
 import helpers from '../../../../controller/helpers/helpers.js';
 
