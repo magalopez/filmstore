@@ -1,3 +1,15 @@
+.section-cart.hidden .cart {
+  transform: translateX(100%);
+  transition-timing-function: ease-in-out;
+  transition: 0.3s;
+}
+
+.section-cart.show .cart {
+  transform: translatex(0%);
+  transition-timing-function: ease-in-out;
+  transition: 0.3s;
+}
+
 .cart {
   width: 448px;
   height: 100%;
@@ -6,6 +18,7 @@
   flex-flow: column;
   justify-content: space-evenly;
 }
+
 .cart .cart-header {
   align-items: center;
   justify-content: space-between;

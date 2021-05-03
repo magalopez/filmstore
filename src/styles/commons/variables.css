@@ -41,3 +41,11 @@
   align-items: flex-start;
   justify-content: flex-end;
 }
+
+.hidden {
+  visibility: hidden;
+}
+
+.show {
+  visibility: visible;
+}

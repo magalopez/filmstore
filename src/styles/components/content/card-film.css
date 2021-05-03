@@ -49,7 +49,6 @@
   fill : var(--red);
 }
 
-
 .card-film > h1, p {
   font-family: var(--nunito);
   font-style: normal;
@@ -63,4 +62,9 @@
 
 .card-film > p {
   margin-bottom: 16px;
+}
+
+.card-film .card-film-info {
+  justify-content: space-between;
+  margin-bottom: 12px;
 }
