@@ -1,4 +1,4 @@
-import { button } from '../button/Button.js';
+import { button } from '../button/button.js';
 import { CardCart } from '../card-cart/CardCart.js';
 import helpers from '../../../../controller/helpers/helpers.js';
 
@@ -81,7 +81,7 @@ export const Cart = (customClass) => {
 
   cart.innerHTML = structureHTML;
 
-  const route =  window.location.hash.substr(2,  window.location.hash.length - 2)
+  const route =  window.location.hash.substr(2,  window.location.hash.length - 2);
   if(route === 'cart' && cart.classList.value.includes("hidden"))
   {
     cart.classList.remove("hidden");

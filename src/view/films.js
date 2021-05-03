@@ -14,7 +14,6 @@ export const Films = (type, customClass) => {
   const films = GET_FILM(URL);
 
   films.then(data => {
-    console.log(data);
     let structureHTML = "";
     data.forEach((element) => {
       const {Poster, Title, Year, price, imdbID } = element;

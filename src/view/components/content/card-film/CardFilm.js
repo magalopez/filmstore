@@ -6,7 +6,7 @@ export const CardFilm = (purchased = false, poster, title, year = null, price, i
   return (
     `<section class="card-film ">
       <div class="card-film-image">
-        <img src="${poster === "N/A" ? "./assets/no-image.png" : poster}" />
+        <img onclick={handleModalDetail('${imdbID}')} src="${poster === "N/A" ? "./assets/no-image.png" : poster}" />
         ${!purchased && 
           `<div class="card-film-fave" id="addFaveMovie">
             <svg width="18" height="16" viewBox="0 0 18 16" fill="none" xmlns="http://www.w3.org/2000/svg">

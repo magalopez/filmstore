@@ -56,6 +56,43 @@ window.buyFilms = () => {
   helpers.REMOVE_LOCALSTORAGE('cartItems');
 };
 
+window.handleModalDetail = (id) => {
+  const modal = document.querySelector(".section-modal");
+  
+  if(modal.classList.value.includes("hidden"))
+  {
+    changeRoute(`#/detail/${id}`)
+    modal.classList.remove("hidden");
+    modal.classList.add("show");
+  }
+  else
+  {
+    removeRoute();
+    modal.classList.remove("show");
+    modal.classList.add("hidden");
+  }
+};
+
 window.playFilm = (id) => {
   console.log('PLAY', id)
+};
+ 
+
+export const validateFilm = async (key) => {
+  const cartItems = helpers.GET_LOCALSTORAGE('cartItems');
+  const myFilms = helpers.GET_LOCALSTORAGE('myFilms');
+ 
+  const allFilms = [...cartItems, ...myFilms];
+  const currentFilm = allFilms.filter((element) => element.imdbID === key);
+
+  if(currentFilm.length)
+  {
+    return currentFilm;
+  }
+  else
+  {
+    const URL = helpers.GET_URL("id", key, null,  null, null );
+    const movie = await GET_FILM(URL);
+    return movie;
+  }
 };
