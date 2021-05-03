@@ -12,13 +12,15 @@ export const Films = (type, customClass) => {
 
   const URL = helpers.GET_URL("general", keywordsFilms[randomNum], null, type, 1 );
   const films = GET_FILM(URL);
-  
+
   films.then(data => {
     console.log(data);
     let structureHTML = "";
     data.forEach((element) => {
       const {Poster, Title, Year, price, imdbID } = element;
-      structureHTML += `${CardFilm(Poster, Title, Year, price, imdbID, "Add to card")}`;
+      const btnEvent = `addToCart('${imdbID}',${price})`;
+
+      structureHTML += `${CardFilm(false, Poster, Title, Year, price, imdbID, "Add to card", btnEvent)}`;
       containerFilms.innerHTML = structureHTML;
     });
   });
