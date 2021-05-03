@@ -1,4 +1,4 @@
-import { Films } from '../../view/films.js';
+import { Movies } from '../../view/movies.js';
 import { Header } from '../../view/components/layout/header/header.js';
 import { Cart } from '../../view/components/content/cart/cart.js';
 
@@ -8,7 +8,7 @@ export const initRouter = () => {
 };
 
 const changeTmp = (hash) => {
-  if (hash === '#/' || hash === '' || hash === '#') return viewTmp('#/home');
+  if (hash === '#/' || hash === '' || hash === '#') return viewTmp('#/movies');
   return viewTmp(hash);
 };
 
@@ -17,48 +17,35 @@ const viewTmp = (routers) => {
   const root = document.getElementById('root');
   console.log('router', router);
 
-  const options = ["Movies", "Series", "Favorites", "My Movies"];
+  const options = ["movies", "series", "favorites", "purchased"];
   root.innerHTML = '';
 
-  root.appendChild(Header(options));
-  root.appendChild(Cart());
-
   switch (router) {
-    case 'home':
-      // root.innerHTML = '';
-      root.appendChild(Films("films-container"));
+    case 'movies':
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
+      root.appendChild(Movies("row"));
       break;
-    // case 'register':
-    //   root.appendChild(registerScreen());
-    //   break;
-    // case 'profile': {
-    //   root.innerHTML = '';
-    //   const showProfile = (user) => {
-    //     getName(user)
-    //     .then((name) => {
-    //       viewPostdb((posts) => {
-    //         root.innerHTML = '';
-    //         root.appendChild(showActUser({
-    //           ...user,
-    //           name,
-    //         }, posts))
-    //       })
-    //     });
-    //   }
-    //   const u = getUser();
-    //   if (u) {
-    //     showProfile(u)
-    //   } else {
-    //     activeUser(showProfile)
-    //       if(u){
-    //         showProfile(u)
-    //       }
-    //       // activeUser()
-    //   }
-    //   break;
-    // }
+    case 'series':
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
+      // root.appendChild(());
+      break;
+    case 'favorites':
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
+      // root.appendChild(());
+      break;
+    case 'purchased':
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
+      // root.appendChild(());
+      break;
+    case 'cart':
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
     default:
-      root.appendChild(Films("container"));
+      root.appendChild(Movies("row"));
       break;
   }
 }

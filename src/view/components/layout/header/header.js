@@ -1,20 +1,20 @@
 
-export const Header = (options, customClass) => {
+export const Header = (options, current, customClass) => {
   const header = document.createElement("header");
   header.classList.add("header-bg")
   if(customClass) header.classList.add(customClass);
 
-  const renderOptionNav = (options) => {
+  const renderOptionNav = (options, current) => {
     let structureHTML = "";
     options.forEach(element => {
-      structureHTML += `<li><a>${element}</a></li>`
+      structureHTML += `<li><a href="#/${element.toLowerCase()}" class="${current === element ? "active": ""}">${element}</a></li>`
     });
     return structureHTML;
   };
   
   const structureHTML = `<nav class="header container">
                           <ul class="header-options row">
-                            ${renderOptionNav(options)}
+                            ${renderOptionNav(options, current)}
                           </ul>
                           <section class="row">
                             <i class="header-icon search">
@@ -23,7 +23,7 @@ export const Header = (options, customClass) => {
                                 <path d="M14 14L11.1 11.1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                               </svg>
                             </i>
-                            <i class="header-icon">
+                            <i class="header-icon" onclick={handleCart()}>
                               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <g clip-path="url(#clip0)">
                                   <path d="M6.00004 14.6666C6.36823 14.6666 6.66671 14.3682 6.66671 14C6.66671 13.6318 6.36823 13.3333 6.00004 13.3333C5.63185 13.3333 5.33337 13.6318 5.33337 14C5.33337 14.3682 5.63185 14.6666 6.00004 14.6666Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

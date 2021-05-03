@@ -1,5 +1,5 @@
 .header-bg {
-  background: var(--black2);
+  background: var(--darkblue);
 }
 
 .header {
@@ -19,11 +19,18 @@
   color: var(--smkwhite);
   font-family: var(--nunito);
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 16px;
   line-height: 22px;
   cursor: pointer;
+  text-transform: capitalize;
+  text-decoration: none;
 }
+
+.header-options .active { 
+  font-weight: 800;
+}
+
 
 .header-icon {
   cursor: pointer;
