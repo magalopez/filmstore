@@ -1,5 +1,6 @@
 import helpers from '../helpers/helpers.js';
 import { GET_FILM } from '../../models/getFilm.js';
+import { changeRoute, removeRoute } from '../router/router.js';
 
 window.addToCart = async (key, price) => {
   let cartItems = helpers.GET_LOCALSTORAGE('cartItems');
@@ -20,18 +21,22 @@ window.deleteToCart = (id) => {
   cartItems.splice(index, 1);
 
   helpers.SET_LOCALSTORAGE('cartItems', cartItems);
+
+  removeRoute();
+  changeRoute('#/cart');
 };
 
 window.handleCart = () => {
   const cart = document.querySelector(".section-cart");
-
   if(cart.classList.value.includes("hidden"))
   {
+    changeRoute("#/cart")
     cart.classList.remove("hidden");
     cart.classList.add("show");
   }
   else
   {
+    removeRoute();
     cart.classList.remove("show");
     cart.classList.add("hidden");
   }
@@ -49,4 +54,8 @@ window.buyFilms = () => {
 
   helpers.SET_LOCALSTORAGE('myFilms', myFilms);
   helpers.REMOVE_LOCALSTORAGE('cartItems');
+};
+
+window.playFilm = (id) => {
+  console.log('PLAY', id)
 };
