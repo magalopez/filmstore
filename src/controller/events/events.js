@@ -2,8 +2,7 @@ import helpers from '../helpers/helpers.js';
 import { GET_FILM } from '../../models/getFilm.js';
 
 window.addToCart = async (key, price) => {
-  let cartItems = localStorage.getItem('cartItems');
-  cartItems = JSON.parse(cartItems);
+  let cartItems = helpers.GET_LOCALSTORAGE('cartItems');
   if(!cartItems) cartItems = [];
 
   const URL = helpers.GET_URL("id", key, null,  null, null );
@@ -11,12 +10,16 @@ window.addToCart = async (key, price) => {
   movie['price'] = price;
   cartItems.push(movie);
 
-  localStorage.setItem('cartItems', JSON.stringify(cartItems));
-  // console.log('cartItems', cartItems);
+  helpers.SET_LOCALSTORAGE('cartItems',cartItems);
 };
 
 window.deleteToCart = (id) => {
-  console.log("delete", id);
+  let cartItems = helpers.GET_LOCALSTORAGE('cartItems');
+  
+  const index = cartItems.findIndex(element => element.imdbID === id);
+  cartItems.splice(index, 1);
+
+  helpers.SET_LOCALSTORAGE('cartItems', cartItems);
 };
 
 window.handleCart = () => {
@@ -35,5 +38,15 @@ window.handleCart = () => {
 };
 
 window.buyFilms = () => {
-  console.log("buy")
+  const cartItems = helpers.GET_LOCALSTORAGE('cartItems');
+
+  let myFilms = helpers.GET_LOCALSTORAGE('myFilms');
+  if(!myFilms) myFilms = [];
+
+  cartItems.forEach((element) => {
+    myFilms.push(element);
+  })
+
+  helpers.SET_LOCALSTORAGE('myFilms', myFilms);
+  helpers.REMOVE_LOCALSTORAGE('cartItems');
 };

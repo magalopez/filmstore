@@ -1,1 +1,1 @@
-export const button = (event, text, customClass = "") => `<button onclick={${event}} class="btn ${customClass}">${text}</button>`;
+export const button = (event, text, customClass = "", disabled) => `<button onclick={${event}} class="btn ${customClass}" ${disabled}>${text}</button>`;
