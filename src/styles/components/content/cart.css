@@ -1,3 +1,9 @@
+.section-cart.hidden {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
 .section-cart.hidden .cart {
   transform: translateX(100%);
   transition-timing-function: ease-in-out;

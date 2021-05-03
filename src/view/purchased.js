@@ -25,7 +25,7 @@ export const FilmsPurchased = (customClass) => {
     seriesStructureHTML += `${CardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
     containerSeries.innerHTML = seriesStructureHTML;
   });
-  containerFilmsPurchased.appendChild(titleSeries);
+  if(series.length) containerFilmsPurchased.appendChild(titleSeries);
   containerFilmsPurchased.appendChild(containerSeries);
 
   /* movies */
@@ -45,7 +45,8 @@ export const FilmsPurchased = (customClass) => {
     moviesStructureHTML += `${CardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
     containerMovies.innerHTML = moviesStructureHTML;
   });
-  containerFilmsPurchased.appendChild(titleMovies);
+
+  if(movies.length) containerFilmsPurchased.appendChild(titleMovies);
   containerFilmsPurchased.appendChild(containerMovies);
     
   return containerFilmsPurchased;
