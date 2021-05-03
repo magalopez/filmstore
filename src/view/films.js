@@ -1,8 +1,8 @@
 import { GET_FILM } from '../models/getFilm.js';
-import { CardFilm } from './components/content/card-film/cardFilm.js';
+import { cardFilm } from './components/content/card-film/cardFilm.js';
 import helpers from '../controller/helpers/helpers.js';
 
-export const Films = (type, customClass) => {
+export const films = (type, customClass) => {
   const containerFilms = document.createElement("main");
         containerFilms.classList.add("container");
         containerFilms.classList.add("films-container");
@@ -20,7 +20,7 @@ export const Films = (type, customClass) => {
       const {Poster, Title, Year, price, imdbID } = element;
       const btnEvent = `addToCart('${imdbID}',${price})`;
 
-      structureHTML += `${CardFilm(false, Poster, Title, Year, price, imdbID, "Add to card", btnEvent)}`;
+      structureHTML += `${cardFilm(false, Poster, Title, Year, price, imdbID, "Add to card", btnEvent)}`;
       containerFilms.innerHTML = structureHTML;
     });
   });

@@ -1,8 +1,8 @@
-import { Films } from '../../view/films.js';
-import { FilmsPurchased } from '../../view/purchased.js';
-import { Header } from '../../view/components/layout/header/header.js';
-import { Cart } from '../../view/components/content/cart/cart.js';
-import { ModalDetail } from '../../view/components/content/modal-detail/modalDetail.js';
+import { films } from '../../view/films.js';
+import { filmsPurchased } from '../../view/purchased.js';
+import { header } from '../../view/components/layout/header/header.js';
+import { cart } from '../../view/components/content/cart/cart.js';
+import { modalDetail } from '../../view/components/content/modal-detail/modalDetail.js';
 
 export const initRouter = () => {
   window.addEventListener('load', changeTmp(window.location.hash));
@@ -35,16 +35,16 @@ const viewTmp = routers => {
 
   switch (router) {
     case 'movies':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      root.appendChild(ModalDetail());
-      root.appendChild(Films("movie","row"));
+      root.appendChild(header(options, router));
+      root.appendChild(cart());
+      root.appendChild(modalDetail());
+      root.appendChild(films("movie","row"));
       break;
     case 'series':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      root.appendChild(ModalDetail());
-      root.appendChild(Films("series","row"));
+      root.appendChild(header(options, router));
+      root.appendChild(cart());
+      root.appendChild(modalDetail());
+      root.appendChild(films("series","row"));
       break;
     // case 'favorites':
     //   root.appendChild(Header(options, router));
@@ -53,22 +53,22 @@ const viewTmp = routers => {
     //   // root.appendChild(());
     //   break;
     case 'purchased':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      root.appendChild(ModalDetail());
-      root.appendChild(FilmsPurchased("purchased-films"));
+      root.appendChild(header(options, router));
+      root.appendChild(cart());
+      root.appendChild(modalDetail());
+      root.appendChild(filmsPurchased("purchased-films"));
       break;
     case 'cart':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      root.appendChild(ModalDetail());
-      root.appendChild(Films("movie","row"));
+      root.appendChild(header(options, router));
+      root.appendChild(cart());
+      root.appendChild(modalDetail());
+      root.appendChild(films("movie","row"));
       break;
     default:
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      root.appendChild(ModalDetail());
-      root.appendChild(Films("movie","row"));
+      root.appendChild(header(options, router));
+      root.appendChild(cart());
+      root.appendChild(modalDetail());
+      root.appendChild(films("movie","row"));
       break;
   }
 };

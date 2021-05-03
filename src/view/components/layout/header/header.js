@@ -1,4 +1,4 @@
-export const Header = (options, current, customClass) => {
+export const header = (options, current, customClass) => {
   const header = document.createElement("header");
   header.classList.add("header-bg")
   if(customClass) header.classList.add(customClass);

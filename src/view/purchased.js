@@ -1,7 +1,7 @@
-import { CardFilm } from './components/content/card-film/cardFilm.js';
+import { cardFilm } from './components/content/card-film/cardFilm.js';
 import helpers from '../controller/helpers/helpers.js';
 
-export const FilmsPurchased = (customClass) => {
+export const filmsPurchased = (customClass) => {
   const containerFilmsPurchased = document.createElement("main");
         containerFilmsPurchased.classList.add("container");
   if (customClass) containerFilmsPurchased.classList.add(customClass);
@@ -22,7 +22,7 @@ export const FilmsPurchased = (customClass) => {
   series.forEach((element) => {
     const { Poster, Title, Year, imdbID } = element;
     const btnEvent = `playFilm('${imdbID}')`;
-    seriesStructureHTML += `${CardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
+    seriesStructureHTML += `${cardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
     containerSeries.innerHTML = seriesStructureHTML;
   });
   if(series.length) containerFilmsPurchased.appendChild(titleSeries);
@@ -42,7 +42,7 @@ export const FilmsPurchased = (customClass) => {
   movies.forEach((element) => {
     const { Poster, Title, Year, imdbID } = element;
     const btnEvent = `playFilm('${imdbID}')`;
-    moviesStructureHTML += `${CardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
+    moviesStructureHTML += `${cardFilm(true, Poster, Title, Year, null, imdbID, "play now", btnEvent)}`;
     containerMovies.innerHTML = moviesStructureHTML;
   });
 

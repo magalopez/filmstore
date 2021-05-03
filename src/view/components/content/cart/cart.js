@@ -2,7 +2,7 @@ import { button } from '../button/button.js';
 import { CardCart } from '../card-cart/cardCart.js';
 import helpers from '../../../../controller/helpers/helpers.js';
 
-export const Cart = (customClass) => {
+export const cart = (customClass) => {
   const cart = document.createElement("section");
   cart.classList.add("section-cart");
   cart.classList.add("overlay");

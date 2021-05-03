@@ -1,7 +1,7 @@
 import { button } from '../button/button.js';
 import { validateFilm } from '../../../../controller/events/events.js';
 
-export const ModalDetail = (customClass) => {
+export const modalDetail = (customClass) => {
   const modal = document.createElement("section");
   modal.classList.add("section-modal");
   modal.classList.add("overlay");
