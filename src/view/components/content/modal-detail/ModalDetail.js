@@ -1,4 +1,4 @@
-import { button } from '../button/Button.js';
+import { button } from '../button/button.js';
 import { validateFilm } from '../../../../controller/events/events.js';
 
 export const ModalDetail = (customClass) => {

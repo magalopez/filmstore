@@ -1,5 +1,5 @@
 import { button } from '../button/button.js';
-import { CardCart } from '../card-cart/CardCart.js';
+import { CardCart } from '../card-cart/cardCart.js';
 import helpers from '../../../../controller/helpers/helpers.js';
 
 export const Cart = (customClass) => {
