@@ -8,7 +8,7 @@ export const Cart = (customClass) => {
   cart.classList.add("overlay");
   cart.classList.add("hidden");
   if(customClass) cart.classList.add(customClass);
-  
+
   let counter;
   let cartItems = helpers.GET_LOCALSTORAGE('cartItems');
 
@@ -80,5 +80,13 @@ export const Cart = (customClass) => {
                           </aside>`;
 
   cart.innerHTML = structureHTML;
+
+  const route =  window.location.hash.substr(2,  window.location.hash.length - 2)
+  if(route === 'cart' && cart.classList.value.includes("hidden"))
+  {
+    cart.classList.remove("hidden");
+    cart.classList.add("show");
+  }
+
   return cart;
 };
