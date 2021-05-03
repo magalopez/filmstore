@@ -1,4 +1,4 @@
-const randomNumber = (length) => {
+const RANDOM_NUMBER = (length) => {
   const MAX = length;
   const initialRandom = Math.random();
   const multiplied = initialRandom * MAX;
@@ -22,7 +22,16 @@ const GET_URL = (typeSearch, keyword, year, typeFilm, page, ) => {
   return URL;
 };
 
+const GET_LOCALSTORAGE = key => JSON.parse(localStorage.getItem(key));
+
+const SET_LOCALSTORAGE = (key, value) => localStorage.setItem(key, JSON.stringify(value));
+
+const REMOVE_LOCALSTORAGE = key => localStorage.removeItem(key);
+
 export default  {
-  randomNumber,
+  RANDOM_NUMBER,
   GET_URL,
+  GET_LOCALSTORAGE,
+  SET_LOCALSTORAGE,
+  REMOVE_LOCALSTORAGE
 }

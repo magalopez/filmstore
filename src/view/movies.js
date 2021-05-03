@@ -8,7 +8,7 @@ export const Movies = (customClass) => {
   if (customClass) containerFilms.classList.add(customClass);
 
   const keywordsMovies = ["comedy", "terror", "drama", "romantic"];
-  const randomNum = helpers.randomNumber(keywordsMovies.length);
+  const randomNum = helpers.RANDOM_NUMBER(keywordsMovies.length);
 
   const URL = helpers.GET_URL("general", keywordsMovies[randomNum], null,  "movie", 1 );
   const movies = GET_FILM(URL);

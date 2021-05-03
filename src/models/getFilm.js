@@ -9,7 +9,7 @@ export const GET_FILM = async (URL) => {
 
     if(success && data) {
       result = data.map((element) => {
-        element["price"] = helpers.randomNumber(50);
+        element["price"] = helpers.RANDOM_NUMBER(50);
         return element;
       });
       result['totalResults'] = totalResults;
