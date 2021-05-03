@@ -1,30 +1,27 @@
-import { httpRequest } from '../models/http.js';
+import { GET_FILM } from '../models/getFilm.js';
 import { CardFilm } from './components/content/card-film/CardFilm.js';
+import helpers from '../controller/helpers/helpers.js';
 
-export const Films = (customClass) => {
+export const Films = (type, customClass) => {
   const containerFilms = document.createElement("main");
         containerFilms.classList.add("container");
   if (customClass) containerFilms.classList.add(customClass);
 
-  const keywordsMovies = ["comedy", "terror", "drama", "romantic"];
-  
-  httpRequest(keywordsMovies[2])
-    .then(resp => {
-      const { Response : success, Search : data, totalResults } = resp;
-      if(success) {
-        let cards = "";
-        data.forEach(element => {
-          cards += `${CardFilm(element.Poster, element.Title, element.Year, element.imdbID)}`;
-        })
-        containerFilms.innerHTML = cards;
-      }
-    });
+  const keywordsFilms = ["comedy", "terror", "drama", "romantic"];
+  const randomNum = helpers.RANDOM_NUMBER(keywordsFilms.length);
 
-  // const buttonLogInEmail = divElemt.querySelector("#login-btn");
-  // buttonLogInEmail.addEventListener('click', () => {
-  //   loginInOnSubmit();
-  //   getName();
-  // });
+  const URL = helpers.GET_URL("general", keywordsFilms[randomNum], null, type, 1 );
+  const films = GET_FILM(URL);
+  
+  films.then(data => {
+    console.log(data);
+    let structureHTML = "";
+    data.forEach((element) => {
+      const {Poster, Title, Year, price, imdbID } = element;
+      structureHTML += `${CardFilm(Poster, Title, Year, price, imdbID, "Add to card")}`;
+      containerFilms.innerHTML = structureHTML;
+    });
+  });
 
   return containerFilms;
 };

@@ -1,4 +1,5 @@
-import { Movies } from '../../view/movies.js';
+import { Films } from '../../view/films.js';
+import { FilmsPurchased } from '../../view/*purchased.js';
 import { Header } from '../../view/components/layout/header/header.js';
 import { Cart } from '../../view/components/content/cart/cart.js';
 
@@ -24,12 +25,12 @@ const viewTmp = (routers) => {
     case 'movies':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
-      root.appendChild(Movies("row"));
+      root.appendChild(Films("movie","row"));
       break;
     case 'series':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
-      // root.appendChild(());
+      root.appendChild(Films("series","row"));
       break;
     case 'favorites':
       root.appendChild(Header(options, router));
@@ -39,13 +40,10 @@ const viewTmp = (routers) => {
     case 'purchased':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
-      // root.appendChild(());
+      // root.appendChild(FilmsPurchased());
       break;
-    case 'cart':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
     default:
-      root.appendChild(Movies("row"));
+      root.appendChild(Films("movie","row"));
       break;
   }
 }
