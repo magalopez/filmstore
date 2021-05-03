@@ -35,7 +35,7 @@
 
 .btn.btn-cyan {
   width: 100%;
-  height: 56px;
+  height: 48px;
   background:var(--cyan);
   border-radius: 6px;
   font-style: normal;
@@ -43,6 +43,12 @@
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.06em;
+}
+
+@media (min-width: 768px) {
+  .btn.btn-cyan {
+    height: 56px;
+  }
 }
 
 .btn.btn-cyan:hover {

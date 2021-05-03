@@ -53,11 +53,11 @@ export const ModalDetail = (customClass) => {
             <section class="modal-detail-info-bottom row">
               <img src="${Poster === "N/A" ? "./assets/no-image.png" : Poster}" />
               <div class="modal-detail-info-bottom-all">
-                <p>${Plot}</p>
-                ${Director != "N/A" ? "<p><b>Director: </b>"+Director+"</p>": ""}
-                ${Genre != "N/A" ? "<p><b>Genre: </b>"+Genre+"</p>": ""}
-                ${Actors != "N/A" ? "<p><b>Actors: </b>"+Actors+"</p>": ""}
-                ${Production != "N/A" ? "<p><b>Production: </b>"+Production+"</p>": ""}
+                <p class="overflow-ellipsis">${Plot}</p>
+                ${Director != "N/A" ? "<p class='overflow-ellipsis'><b>Director: </b>"+Director+"</p>": ""}
+                ${Genre != "N/A" ? "<p class='overflow-ellipsis'><b>Genre: </b>"+Genre+"</p>": ""}
+                ${Actors != "N/A" ? "<p class='overflow-ellipsis'><b>Actors: </b>"+Actors+"</p>": ""}
+                ${Production != "N/A" ? "<p class='overflow-ellipsis'><b>Production: </b>"+Production+"</p>": ""}
                 <div class="modal-detail-button">
                   ${button(btnEvent, btnText, "btn-cyan")}
                 </div>

@@ -4,11 +4,19 @@
 
 .header {
   display: flex;
-  flex-flow: row;
+  align-items: center; 
   align-content: center;
-  min-height: 56px;
-  justify-content: space-between;
-  align-items: center;
+  flex-flow: column-reverse;
+  min-height: 64px;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .header {
+    flex-flow: row;
+    min-height: 56px;
+    justify-content: space-between;
+  }
 }
 
 .header-options > li {
@@ -29,6 +37,13 @@
 
 .header-options .active { 
   font-weight: 800;
+}
+
+@media (max-width: 768px) {
+
+  .header > section {
+    align-self: flex-end;
+  }
 }
 
 

@@ -1,6 +1,26 @@
 .films-container {
   display: flex;
   flex-flow: row wrap;
+  justify-content: space-evenly;
+  padding: 32px;
+}
+@media (min-width: 768px) {
+  .films-container {
+    padding: 64px 0;
+  }
+}
+
+.purchased-films {
+  padding: 32px;
+}
+@media (min-width: 768px) {
+  .purchased-films  {
+    padding: 64px 32px;
+  }
+}
+
+.purchased-films section .card-film {
+  margin-right: 32px;
 }
 
 .purchased-films h4 {
@@ -9,6 +29,6 @@
   font-weight: 800;
   text-align: left;
   color: var(--smkwhite);
-  margin: 32px 0;
+  margin-bottom: 32px;
   text-transform: uppercase;
 }

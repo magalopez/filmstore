@@ -1,4 +1,4 @@
-.section-cart.hidden {
+.section-cart {
   display: flex;
   align-items: flex-start;
   justify-content: flex-end;

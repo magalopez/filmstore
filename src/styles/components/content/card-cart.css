@@ -24,7 +24,13 @@
 }
 
 .card-cart .card-cart-info {
-  width: 202px;
+  width: 50%;
+}
+
+@media (min-width: 405px) {
+  .card-cart .card-cart-info {
+    width: 202px;
+  }
 }
 
 .card-cart .card-cart-info > section {

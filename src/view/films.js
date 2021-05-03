@@ -5,6 +5,7 @@ import helpers from '../controller/helpers/helpers.js';
 export const Films = (type, customClass) => {
   const containerFilms = document.createElement("main");
         containerFilms.classList.add("container");
+        containerFilms.classList.add("films-container");
   if (customClass) containerFilms.classList.add(customClass);
 
   const keywordsFilms = ["comedy", "terror", "drama", "romantic"];
