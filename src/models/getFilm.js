@@ -15,6 +15,7 @@ export const GET_FILM = async (URL) => {
       result['totalResults'] = totalResults;
     }
     else if (success) {
+      resp["price"] = helpers.RANDOM_NUMBER(50);
       result = resp;
     }
   });

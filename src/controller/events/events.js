@@ -54,6 +54,7 @@ window.buyFilms = () => {
 
   helpers.SET_LOCALSTORAGE('myFilms', myFilms);
   helpers.REMOVE_LOCALSTORAGE('cartItems');
+  changeRoute(`#/purchased`)
 };
 
 window.handleModalDetail = (id) => {
@@ -81,9 +82,13 @@ window.playFilm = (id) => {
 export const validateFilm = async (key) => {
   const cartItems = helpers.GET_LOCALSTORAGE('cartItems');
   const myFilms = helpers.GET_LOCALSTORAGE('myFilms');
- 
-  const allFilms = [...cartItems, ...myFilms];
-  const currentFilm = allFilms.filter((element) => element.imdbID === key);
+  let allFilms = [];
+  let currentFilm = [];
+
+  if(cartItems && myFilms) {
+    allFilms = [...cartItems, ...myFilms];
+    currentFilm = allFilms.filter((element) => element.imdbID === key);
+  }
 
   if(currentFilm.length)
   {

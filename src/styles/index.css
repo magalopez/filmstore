@@ -13,6 +13,7 @@
 @import "./components/content/card-film.css";
 @import "./components/content/cart.css";
 @import "./components/content/card-cart.css";
+@import "./components/content/modal-detail.css";
 
 /* components layout*/
 @import "./components/layout/header.css";

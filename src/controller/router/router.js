@@ -2,6 +2,7 @@ import { Films } from '../../view/films.js';
 import { FilmsPurchased } from '../../view/purchased.js';
 import { Header } from '../../view/components/layout/header/Header.js';
 import { Cart } from '../../view/components/content/cart/Cart.js';
+import { ModalDetail } from '../../view/components/content/modal-detail/ModalDetail.js';
 
 export const initRouter = () => {
   window.addEventListener('load', changeTmp(window.location.hash));
@@ -36,27 +37,37 @@ const viewTmp = routers => {
     case 'movies':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
+      root.appendChild(ModalDetail());
       root.appendChild(Films("movie","row"));
       break;
     case 'series':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
+      root.appendChild(ModalDetail());
       root.appendChild(Films("series","row"));
       break;
-    case 'favorites':
-      root.appendChild(Header(options, router));
-      root.appendChild(Cart());
-      // root.appendChild(());
-      break;
+    // case 'favorites':
+    //   root.appendChild(Header(options, router));
+    //   root.appendChild(Cart());
+    //   root.appendChild(ModalDetail());
+    //   // root.appendChild(());
+    //   break;
     case 'purchased':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
+      root.appendChild(ModalDetail());
       root.appendChild(FilmsPurchased("purchased-films"));
       break;
     case 'cart':
       root.appendChild(Header(options, router));
       root.appendChild(Cart());
+      root.appendChild(ModalDetail());
+      root.appendChild(Films("movie","row"));
+      break;
     default:
+      root.appendChild(Header(options, router));
+      root.appendChild(Cart());
+      root.appendChild(ModalDetail());
       root.appendChild(Films("movie","row"));
       break;
   }
