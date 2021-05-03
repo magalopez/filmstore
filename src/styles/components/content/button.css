@@ -16,15 +16,21 @@
 
 }
 
-.btn.btn-outline-red {
+.btn.btn-red:hover {}
+
+.btn.btn-outline-cyan {
   width: 156px;
   height: 37px; 
-  border: 2px solid var(--red);
+  border: 2px solid var(--cyan);
   font-size: 12px;
   line-height: 14px;
   text-align: center;
   letter-spacing: 0.16em;
-  color: var(--red);
+  color: var(--cyan);
+}
+
+.btn.btn-outline-cyan:hover {
+  background : rgba(110, 67, 255, 0.2);
 }
 
 .btn.btn-cyan {
@@ -37,4 +43,14 @@
   font-size: 14px;
   line-height: 19px;
   letter-spacing: 0.06em;
+}
+
+.btn.btn-cyan:hover {
+  background: #4E1AFF;
+  /* box-shadow: 0px 4px 8px rgba(78, 25, 255, 0.3); */
+}
+
+button:disabled {
+  background: #3A3D4F  !important;
+  color: var(--gray)!important;
 }

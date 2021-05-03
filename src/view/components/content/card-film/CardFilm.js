@@ -18,7 +18,7 @@ export const CardFilm = (poster, title, year = null, price, imdbID, btnText = "A
         ${year?"<p>"+year+"</p>":""}
         <p>${price != 0? "$"+price:"FREE"}</p>
       </div>
-      ${button(event, btnText, "btn-outline-red")}
+      ${button(event, btnText, "btn-outline-cyan")}
     </section>`
   )
 };
